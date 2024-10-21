@@ -4,14 +4,13 @@ class TextEditor {
     private StringBuilder currentText = new StringBuilder();
     private Stack<String> undoStack = new Stack<>();
     private Stack<String> redoStack = new Stack<>();
-
-    // Fungsi untuk menampilkan teks yang ada saat ini
+    
     public void show() {
         System.out.println("Isi teks saat ini:");
         System.out.println(currentText.length() > 0 ? currentText.toString() : "(Kosong)");
     }
 
-    // Fungsi untuk menulis atau menambahkan teks baru
+    // Fungsi untuk  menambahkan teks baru
     public void write(String text) {
         undoStack.push(currentText.toString());  // Simpan state untuk undo
         currentText.append(text);
